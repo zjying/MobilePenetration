@@ -1,0 +1,78 @@
+<!--解决mobile端滚动穿透问题-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="js/commen.js"></script>
+		<link href="css/index.css" rel="stylesheet" />
+		<style type="text/css">
+			body.modal-open{
+				position: fixed;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body >
+		<div >
+			<div class="action">
+               <input type="button" class="btn btn-default" value="弹出" id="modelName"/>
+            </div>
+			<div class="cont">
+				要移动端看哦
+				内容区
+			</div>
+			<div class="btm">
+				底部啦
+			</div>
+			<!-- 车型选择框 -->
+			<div class="layer carDetile" id="carDetile">
+		        <div class="layer-content car-content" style="top: 198.5px;">
+		            <div class="layer-title">
+		                	请选择与您车辆匹配的车型
+		                <img src="/zkyq-web/static/images/close_2@2x.svg" class="close">
+		            </div>
+		            <ul class="layer-box">
+						<li class="clearfix  every-layor" data-info="{&quot;brandCode&quot;:&quot;TYBAED0036&quot;,&quot;brandName&quot;:&quot;上汽通用五菱&quot;,&quot;engineDesc&quot;:&quot;1.0L&quot;,&quot;familyName&quot;:&quot;五菱之光/五菱扬光&quot;,&quot;newCarPrice&quot;:&quot;36800&quot;,&quot;purchasePriceTax&quot;:&quot;39945&quot;,&quot;importFlag&quot;:&quot;0&quot;,&quot;purchasePrice&quot;:&quot;36800&quot;,&quot;seat&quot;:&quot;8&quot;,&quot;modelName&quot;:&quot;五菱LZW6376E3客车1.0L五菱之光/五菱扬光手动档&quot;,&quot;standardName&quot;:&quot;五菱LZW6376E3客车&quot;,&quot;gearboxType&quot;:&quot;手动档&quot;}">
+							<p>五菱LZW6376E3客车 1.0L 2008款 升级版 五菱之光/五菱扬光 8座</p>
+							<span class="pull-right"> 市场参考价:36800</span>
+						</li>
+						<li class="clearfix  every-layor" data-info="{&quot;brandCode&quot;:&quot;TYBAED0027&quot;,&quot;brandName&quot;:&quot;上汽通用五菱&quot;,&quot;engineDesc&quot;:&quot;1.0L&quot;,&quot;familyName&quot;:&quot;五菱之光/五菱扬光&quot;,&quot;newCarPrice&quot;:&quot;31800&quot;,&quot;purchasePriceTax&quot;:&quot;34518&quot;,&quot;importFlag&quot;:&quot;0&quot;,&quot;purchasePrice&quot;:&quot;31800&quot;,&quot;seat&quot;:&quot;8&quot;,&quot;modelName&quot;:&quot;五菱LZW6376E3客车1.0L五菱之光/五菱扬光手动档&quot;,&quot;standardName&quot;:&quot;五菱LZW6376E3客车&quot;,&quot;gearboxType&quot;:&quot;手动档&quot;}">
+							<p>五菱LZW6376E3客车 1.0L 2008款 基本型 五菱之光/五菱扬光 8座</p>
+							<span class="pull-right"> 市场参考价:31800</span>
+						</li>	
+						<li class="clearfix  every-layor" data-info="{&quot;brandCode&quot;:&quot;TYBAED0027&quot;,&quot;brandName&quot;:&quot;上汽通用五菱&quot;,&quot;engineDesc&quot;:&quot;1.0L&quot;,&quot;familyName&quot;:&quot;五菱之光/五菱扬光&quot;,&quot;newCarPrice&quot;:&quot;31800&quot;,&quot;purchasePriceTax&quot;:&quot;34518&quot;,&quot;importFlag&quot;:&quot;0&quot;,&quot;purchasePrice&quot;:&quot;31800&quot;,&quot;seat&quot;:&quot;8&quot;,&quot;modelName&quot;:&quot;五菱LZW6376E3客车1.0L五菱之光/五菱扬光手动档&quot;,&quot;standardName&quot;:&quot;五菱LZW6376E3客车&quot;,&quot;gearboxType&quot;:&quot;手动档&quot;}">
+							<p>五菱LZW6376E3客车 1.0L 2008款 基本型 五菱之光/五菱扬光 8座</p>
+							<span class="pull-right"> 市场参考价:31800</span>
+						</li>	
+						<li class="clearfix  every-layor" data-info="{&quot;brandCode&quot;:&quot;TYBAED0027&quot;,&quot;brandName&quot;:&quot;上汽通用五菱&quot;,&quot;engineDesc&quot;:&quot;1.0L&quot;,&quot;familyName&quot;:&quot;五菱之光/五菱扬光&quot;,&quot;newCarPrice&quot;:&quot;31800&quot;,&quot;purchasePriceTax&quot;:&quot;34518&quot;,&quot;importFlag&quot;:&quot;0&quot;,&quot;purchasePrice&quot;:&quot;31800&quot;,&quot;seat&quot;:&quot;8&quot;,&quot;modelName&quot;:&quot;五菱LZW6376E3客车1.0L五菱之光/五菱扬光手动档&quot;,&quot;standardName&quot;:&quot;五菱LZW6376E3客车&quot;,&quot;gearboxType&quot;:&quot;手动档&quot;}">
+							<p>五菱LZW6376E3客车 1.0L 2008款 基本型 五菱之光/五菱扬光 8座</p>
+							<span class="pull-right"> 市场参考价:31800</span>
+						</li>	
+						<li class="clearfix  every-layor" data-info="{&quot;brandCode&quot;:&quot;TYBAED0027&quot;,&quot;brandName&quot;:&quot;上汽通用五菱&quot;,&quot;engineDesc&quot;:&quot;1.0L&quot;,&quot;familyName&quot;:&quot;五菱之光/五菱扬光&quot;,&quot;newCarPrice&quot;:&quot;31800&quot;,&quot;purchasePriceTax&quot;:&quot;34518&quot;,&quot;importFlag&quot;:&quot;0&quot;,&quot;purchasePrice&quot;:&quot;31800&quot;,&quot;seat&quot;:&quot;8&quot;,&quot;modelName&quot;:&quot;五菱LZW6376E3客车1.0L五菱之光/五菱扬光手动档&quot;,&quot;standardName&quot;:&quot;五菱LZW6376E3客车&quot;,&quot;gearboxType&quot;:&quot;手动档&quot;}">
+							<p>五菱LZW6376E3客车 1.0L 2008款 基本型 五菱之光/五菱扬光 8座</p>
+							<span class="pull-right"> 市场参考价:31800</span>
+						</li>	
+						<li class="clearfix  every-layor" data-info="{&quot;brandCode&quot;:&quot;TYBAED0027&quot;,&quot;brandName&quot;:&quot;上汽通用五菱&quot;,&quot;engineDesc&quot;:&quot;1.0L&quot;,&quot;familyName&quot;:&quot;五菱之光/五菱扬光&quot;,&quot;newCarPrice&quot;:&quot;31800&quot;,&quot;purchasePriceTax&quot;:&quot;34518&quot;,&quot;importFlag&quot;:&quot;0&quot;,&quot;purchasePrice&quot;:&quot;31800&quot;,&quot;seat&quot;:&quot;8&quot;,&quot;modelName&quot;:&quot;五菱LZW6376E3客车1.0L五菱之光/五菱扬光手动档&quot;,&quot;standardName&quot;:&quot;五菱LZW6376E3客车&quot;,&quot;gearboxType&quot;:&quot;手动档&quot;}">
+							<p>五菱LZW6376E3客车 1.0L 2008款 基本型 五菱之光/五菱扬光 8座</p>
+							<span class="pull-right"> 市场参考价:31800</span>
+						</li>
+						<li class="clearfix  every-layor" data-info="{&quot;brandCode&quot;:&quot;TYBAED0027&quot;,&quot;brandName&quot;:&quot;上汽通用五菱&quot;,&quot;engineDesc&quot;:&quot;1.0L&quot;,&quot;familyName&quot;:&quot;五菱之光/五菱扬光&quot;,&quot;newCarPrice&quot;:&quot;31800&quot;,&quot;purchasePriceTax&quot;:&quot;34518&quot;,&quot;importFlag&quot;:&quot;0&quot;,&quot;purchasePrice&quot;:&quot;31800&quot;,&quot;seat&quot;:&quot;8&quot;,&quot;modelName&quot;:&quot;五菱LZW6376E3客车1.0L五菱之光/五菱扬光手动档&quot;,&quot;standardName&quot;:&quot;五菱LZW6376E3客车&quot;,&quot;gearboxType&quot;:&quot;手动档&quot;}">
+							<p>五菱LZW6376E3客车 1.0L 2008款 基本型 五菱之光/五菱扬光 8座</p>
+							<span class="pull-right"> 市场参考价:31800</span>
+						</li>
+						<li class="clearfix  every-layor" data-info="{&quot;brandCode&quot;:&quot;TYBAED0027&quot;,&quot;brandName&quot;:&quot;上汽通用五菱&quot;,&quot;engineDesc&quot;:&quot;1.0L&quot;,&quot;familyName&quot;:&quot;五菱之光/五菱扬光&quot;,&quot;newCarPrice&quot;:&quot;31800&quot;,&quot;purchasePriceTax&quot;:&quot;34518&quot;,&quot;importFlag&quot;:&quot;0&quot;,&quot;purchasePrice&quot;:&quot;31800&quot;,&quot;seat&quot;:&quot;8&quot;,&quot;modelName&quot;:&quot;五菱LZW6376E3客车1.0L五菱之光/五菱扬光手动档&quot;,&quot;standardName&quot;:&quot;五菱LZW6376E3客车&quot;,&quot;gearboxType&quot;:&quot;手动档&quot;}">
+							<p>五菱LZW6376E3客车 1.0L 2008款 基本型 五菱之光/五菱扬光 8座</p>
+							<span class="pull-right"> 市场参考价:31800</span>
+						</li>
+		            </ul>
+		            <div class="action no-car">
+		               	<button type="button" sign="button" value="" class="no-car btn">找不到我的车</button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<script type="text/javascript" src="js/demo.js"></script>
+	</body>
+</html>
